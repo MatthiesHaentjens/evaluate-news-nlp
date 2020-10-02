@@ -2,37 +2,34 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>SentiCheck</title>
     </head>
 
     <body>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+        <div class="container">    
+            <header class="header">
+                <img class="logo" src={logo}>
+                <div class="">
+                    navigation
+                </div>
+            </header>
 
-        <main>
-            <section>
+            <section class="submit-text">
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="text" type="text" name="input" value="" placeholder="Insert text to be checked">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            <section>
+            </section>
 
-            <section>
+            <section class="display-results">
                 <strong>Form Results:</strong>
                 <div id="results"></div>
             </section>
-        </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
+            <footer class="footer">
+                <p>This is a great footer</p>
+            </footer>
+        </div>
     </body>
 </html>

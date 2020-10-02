@@ -1,14 +1,30 @@
+html,body{
+    height: 100%;
+  }
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    margin: 0px;
 }
 
-main {
-    flex: 2;
+.container {
+    display: grid;
+    grid-template-columns: 2.5% 1fr 2.5%;
+    grid-template-rows: 70px 1fr 1fr 100px;
+    grid-template-areas:
+      "header header header"
+      ". submit-text ."
+      ". display-results ."
+      "footer footer footer";
+    height: 100%;
+  }
+
+.submit-text {
+    grid-area: submit-text;
 }
 
-section {
-    max-width: 800px;
-    margin: 50px auto;
+.display-results {
+    grid-area: display-results;
 }

@@ -1,11 +1,15 @@
 import { checkForName } from './js/nameChecker'
 import { handleSubmit } from './js/formHandler'
-import { getSentiment } from './js/sentimentAnalysis'
-import { postData } from './js/sentimentAnalysis'
+import { postData } from './js/formHandler'
+
+import './styles/base.scss';
+import './styles/footer.scss';
+import './styles/form.scss';
+import './styles/header.scss';
+import logo from './images/sentiment-analysis-logo.jpg'
 
 export {
     checkForName,
     handleSubmit,
-    getSentiment,
-    postData
+    postData,
 }

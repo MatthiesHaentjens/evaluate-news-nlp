@@ -1,5 +1,11 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+
+.header {
+    grid-area: header;
+    background-color: aquamarine;
+}
+
+.logo {
+    grid-area: header;
+    height: 50px;
+    margin-left: 10px;
 }
