@@ -10,27 +10,24 @@
         <div class="container">    
             <header class="header">
                 <img class="logo" src={logo}>
-                <div class="">
-                    navigation
-                </div>
             </header>
 
             <section class="submit-text">
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="text" type="text" name="input" value="" placeholder="Insert text to be checked">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                <form class="text-form" onsubmit="return Client.handleSubmit(event)">
+                    <textarea id="text" type="text" name="input" rows="15" placeholder="Insert text to be checked"></textarea>
+                    <input class="button" type="submit" name="" value="Get sentiment" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
 
             <section class="display-results">
-                <strong>Form Results:</strong>
                 <table class="results-table">
+                    <th class="table-header" colspan="2">Sentiment results</th>
                     <tr>
-                        <th>Polarity</th>
-                        <td id="polarity-score"></td>
+                        <th>Sentiment</th>
+                        <td id="sentiment-score"></td>
                     </tr>
                     <tr>
-                        <th>Consistency of polarity</th>
+                        <th>Consistency of sentiment in text</th>
                         <td id="consistency"></td>
                     </tr>
                     <tr>
@@ -42,14 +39,14 @@
                         <td id="irony"></td>
                     </tr>
                     <tr>
-                        <th>Confidency</th>
+                        <th>Confidence</th>
                         <td id="confidence"></td>
                     </tr>
                 </table>
             </section>
 
             <footer class="footer">
-                <p>This is a great footer</p>
+                <a href="https://www.meaningcloud.com" class="footer-text">Powered by Meaningcloud</a>
             </footer>
         </div>
     </body>

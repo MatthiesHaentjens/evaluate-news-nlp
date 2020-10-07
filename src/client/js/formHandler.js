@@ -1,4 +1,4 @@
-function handleSubmit(event) {
+export function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
@@ -7,7 +7,7 @@ function handleSubmit(event) {
     try {
         postData('/check', {text:formText})
             .then((data) => {
-                console.log(data)
+                Client.updateUI(data)
             })
     }
     catch (error) {
@@ -35,4 +35,3 @@ export async function postData( url = '', data = {}) {
     }
   }
 
-export { handleSubmit }

@@ -1,5 +1,14 @@
 
 .footer {
     grid-area: footer;
+    display: flex;
+    align-items: center;
     background-color: cadetblue;   
+}
+
+.footer-text {
+    padding: 20px;
+    color: white;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
 }
