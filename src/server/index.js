@@ -4,7 +4,7 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-const meaningCloud = require('./sentimentAnalysis.js')
+// const meaningCloud = require('./sentimentAnalysis.js')
 
 const app = express()
 
@@ -43,11 +43,10 @@ app.get('/test', function (req, res) {
 })
 
 app.post('/check', function (req, res) {
-    console.log(req)
+
     const text = req.body.text
-    console.log(text)
     
-    var options = {
+    let options = {
         'method': 'POST',
         'hostname': 'api.meaningcloud.com',
         'path': encodeURI('/sentiment-2.1?key=' + apiKeyURLMeaningCloud + '&lang=en&txt=' + text),
@@ -56,25 +55,27 @@ app.post('/check', function (req, res) {
         'maxRedirects': 20
       };
       
-    var request = https.request(options, function (res) {
-        var chunks = [];
+    const request = https.request(options, function (x) {
+        let chunks = [];
         
-        res.on("data", function (chunk) {
+        x.on("data", function (chunk) {
             chunks.push(chunk);
         });
         
-        res.on("end", function (chunk) {
-            var body = Buffer.concat(chunks);
-            console.log(body.toString());
+        x.on("end", function (chunk) {
+            let body = Buffer.concat(chunks);
+            res.json(body)
+            // console.log(body.toString());
         });
-        
-        res.on("error", function (error) {
+
+        x.on("error", function (error) {
             console.error(error);
         });
+
     });
     
     request.end();
+    
 
-    res.send(body)
 })
 

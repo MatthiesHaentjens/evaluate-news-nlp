@@ -3,7 +3,6 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('text').value
-    console.log(formText)
     
     try {
         postData('/check', {text:formText})
