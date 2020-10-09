@@ -8,6 +8,9 @@ module.exports = {
     output: {
         libraryTarget: 'var',
         library: 'Client',
+        path: path.resolve(__dirname + '/dist/assets'),
+        filename: 'bundle.js'
+        
     },
     mode: 'development',
     devtool: 'source-map',

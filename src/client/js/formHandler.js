@@ -5,14 +5,15 @@ export function handleSubmit(event) {
     let formText = document.getElementById('text').value
     
     try {
-        postData('/check', {text:formText})
-            .then((data) => {
-                Client.updateUI(data)
-            })
+      postData('/check', {text:formText})
+          .then((data) => {
+              Client.updateUI(data)
+          })
     }
     catch (error) {
         console.log('error', error);
     }
+    
     
 }
 

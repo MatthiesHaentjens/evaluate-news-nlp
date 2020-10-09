@@ -2,19 +2,19 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>SentiCheck</title>
+        <title>SENTICHECK</title>
     </head>
 
     <body>
 
         <div class="container">    
             <header class="header">
-                <img class="logo" src={logo}>
+                <div class="site-name">SENTICHECK</div>
             </header>
 
             <section class="submit-text">
                 <form class="text-form" onsubmit="return Client.handleSubmit(event)">
-                    <textarea id="text" type="text" name="input" rows="15" placeholder="Insert text to be checked"></textarea>
+                    <textarea id="text" type="text" name="input" rows="15" required placeholder="Insert text to be checked"></textarea>
                     <input class="button" type="submit" name="" value="Get sentiment" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             </section>
@@ -49,5 +49,14 @@
                 <a href="https://www.meaningcloud.com" class="footer-text">Powered by Meaningcloud</a>
             </footer>
         </div>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+           </script>
     </body>
 </html>

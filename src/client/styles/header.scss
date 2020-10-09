@@ -1,11 +1,13 @@
 
 .header {
     grid-area: header;
+    display: flex;
+    align-items: center;
     background-color: aquamarine;
 }
 
-.logo {
-    grid-area: header;
-    height: 50px;
-    margin-left: 10px;
+.site-name {
+    margin: 20px;
+    font-size: x-large;
+    font-weight: bolder;
 }

@@ -77,3 +77,4 @@ app.post('/check', function (req, res) {
 
 })
 
+module.exports = app
