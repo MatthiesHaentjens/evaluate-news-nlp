@@ -43,12 +43,12 @@ app.get('/test', function (req, res) {
 
 app.post('/check', function (req, res) {
 
-    const text = req.body.text
+    const url = req.body.url
     
     let options = {
         'method': 'POST',
         'hostname': 'api.meaningcloud.com',
-        'path': encodeURI('/sentiment-2.1?key=' + apiKeyURLMeaningCloud + '&lang=en&txt=' + text),
+        'path': encodeURI('/sentiment-2.1?key=' + apiKeyURLMeaningCloud + '&lang=en&url=' + url),
         'headers': {
         },
         'maxRedirects': 20
